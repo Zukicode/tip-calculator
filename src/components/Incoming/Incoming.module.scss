@@ -1,0 +1,78 @@
+.incoming {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		gap: 20px;
+	}
+
+	.selectTip {
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+
+		.header {
+			p {
+				color: var(--gray-cyan);
+				font-size: 14px;
+			}
+		}
+
+		.buttons {
+			display: grid;
+			gap: 10px;
+			grid-template-columns: 1fr 1fr 1fr;
+
+			@media (max-width: 420px) {
+				place-items: center;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.tipButton {
+				width: 110px;
+				background-color: var(--cyan);
+				color: var(--light);
+				border: none;
+				padding: 5px 10px;
+				border-radius: 4px;
+				font-size: 21px;
+				transition: all 0.4s;
+
+				&.active {
+					transition: all 0.4s;
+					background-color: var(--primary-cyan);
+				}
+
+				&:hover {
+					transition: all 0.4s;
+					background-color: #92dfd5;
+					color: var(--cyan);
+					cursor: pointer;
+				}
+			}
+
+			.tipButtonCustom {
+				width: 110px;
+				background-color: var(--light);
+				border: 2px solid transparent;
+				padding: 5px 10px;
+				border-radius: 4px;
+				font-size: 21px;
+				color: var(--cyan);
+				text-align: center;
+
+				&.focus {
+					border: 2px solid var(--primary-cyan);
+				}
+
+				&::placeholder {
+					color: var(--gray-cyan);
+				}
+			}
+		}
+	}
+}
